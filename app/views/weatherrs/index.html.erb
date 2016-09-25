@@ -7,19 +7,14 @@
       <thead class="bg-primary">
         <tr>
           <th>日期</th>
-          <!-- <th class="hidden-xs-down">天氣</th> -->
           <th class="hidden-xs-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：°C">氣溫</th>
-          <!-- <th data-toggle="tooltip" data-placement="top" data-original-title="單位：m">浪高</th> -->
-          <!-- <th class="hidden-md-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：°C">海溫</th> -->
           <th>最低溫</th>
           <th>最高溫</th>
           <th class="hidden-sm-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：mm">累積雨量</th>
           <th class="hidden-lg-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：hr">降雨時數</th>
           <th>日照率</th>
           <th>日照時數</th>
-          <!-- <th class="hidden-md-down">風向</th> -->
           <th data-toggle="tooltip" data-placement="top" data-original-title="單位：m/s">風速</th>
-          <!-- <th class="hidden-xs-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：級">風力</th> -->
           <th data-toggle="tooltip" data-placement="top" data-original-title="單位：m/s">最大陣風</th>
           <th>相對濕度</th>
           <th class="hidden-lg-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：hPa">海面氣壓</th>
@@ -31,19 +26,14 @@
         <% @weatherrs.each do |report| %>
           <tr>
             <td><%= report.id %></td>
-            <!-- <td class="hidden-xs-down"><%= report.weather %></td> -->
             <td class="hidden-xs-down"><%= report.temp %></td>
             <td><%= report.t_min %></td>
             <td><%= report.t_max %></td>
-            <!-- <td><%= report.wave %></td> -->
-            <!-- <td class="hidden-md-down"><%= report.ocean_temp %></td> -->
             <td class="hidden-sm-down" ><%= report.rain %></td>
             <td class="hidden-lg-down"><%= report.rain_hour %></td>
             <td><%= report.sun_rate %></td>
             <td><%= report.sun_hour %></td>
-            <!-- <td class="hidden-md-down"><%= report.wdir %></td> -->
             <td><%= report.wdsd %></td>
-            <!-- <td class="hidden-xs-down"><%= report.wdlv %></td> -->
             <td><%= report.wd_max %></td>
             <td><%= report.humd %></td>
             <td class="hidden-lg-down"><%= report.pres %></td>
