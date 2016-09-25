@@ -30,8 +30,7 @@
       <tbody>
         <% @weatherrs.each do |report| %>
           <tr>
-            <% date = report.id %>
-            <td><%= report.day %></td>
+            <td><%= report.id %></td>
             <!-- <td class="hidden-xs-down"><%= report.weather %></td> -->
             <td class="hidden-xs-down"><%= report.temp %></td>
             <td><%= report.t_min %></td>
