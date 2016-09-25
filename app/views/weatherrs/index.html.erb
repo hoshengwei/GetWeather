@@ -1,27 +1,64 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="page-header">
+      <h2 class="h3">近30日氣象資料<span class="h6">--氣象局資料--</span></h2>
+    </div>
+    <table class="table table-hover table-sm">
+      <thead class="bg-primary">
+        <tr>
+          <th>日期</th>
+          <!-- <th class="hidden-xs-down">天氣</th> -->
+          <th class="hidden-xs-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：°C">氣溫</th>
+          <!-- <th data-toggle="tooltip" data-placement="top" data-original-title="單位：m">浪高</th> -->
+          <!-- <th class="hidden-md-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：°C">海溫</th> -->
+          <th>最低溫</th>
+          <th>最高溫</th>
+          <th class="hidden-sm-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：mm">累積雨量</th>
+          <th class="hidden-lg-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：hr">降雨時數</th>
+          <th>日照率</th>
+          <th>日照時數</th>
+          <!-- <th class="hidden-md-down">風向</th> -->
+          <th data-toggle="tooltip" data-placement="top" data-original-title="單位：m/s">風速</th>
+          <!-- <th class="hidden-xs-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：級">風力</th> -->
+          <th data-toggle="tooltip" data-placement="top" data-original-title="單位：m/s">最大陣風</th>
+          <th>相對濕度</th>
+          <th class="hidden-lg-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：hPa">海面氣壓</th>
+          <th class="hidden-md-down" data-toggle="tooltip" data-placement="top" data-original-title="單位：km">能見度</th>
+          <th class="hidden-xs-down">數據狀態</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @weatherrs.each do |report| %>
+          <tr>
+            <td><%= report.year + report.month + report.day %></td>
+            <!-- <td class="hidden-xs-down"><%= report.weather %></td> -->
+            <td class="hidden-xs-down"><%= report.temp %></td>
+            <td><%= report.t_min %></td>
+            <td><%= report.t_max %></td>
+            <!-- <td><%= report.wave %></td> -->
+            <!-- <td class="hidden-md-down"><%= report.ocean_temp %></td> -->
+            <td class="hidden-sm-down" ><%= report.rain %></td>
+            <td class="hidden-lg-down"><%= report.rain_hour %></td>
+            <td><%= report.sun_rate %></td>
+            <td><%= report.sun_hour %></td>
+            <!-- <td class="hidden-md-down"><%= report.wdir %></td> -->
+            <td><%= report.wdsd %></td>
+            <!-- <td class="hidden-xs-down"><%= report.wdlv %></td> -->
+            <td><%= report.wd_max %></td>
+            <td><%= report.humd %></td>
+            <td class="hidden-lg-down"><%= report.pres %></td>
+            <td class="hidden-md-down"><%= report.visb %></td>
+            <td class="hidden-xs-down"><%= report.status %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 
-<h1>Weatherrs</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @weatherrs.each do |weatherr| %>
-      <tr>
-        <td><%= weatherr.date %></td>
-        <td><%= link_to 'Show', weatherr %></td>
-        <td><%= link_to 'Edit', edit_weatherr_path(weatherr) %></td>
-        <td><%= link_to 'Destroy', weatherr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Weatherr', new_weatherr_path %>
+<!-- bootstrap tooltip & popover initialize -->
+<script>
+  $(function () { $("[data-toggle='tooltip']").tooltip(); });
+  $(function () { $('[data-toggle="popover"]').popover() });
+</script>

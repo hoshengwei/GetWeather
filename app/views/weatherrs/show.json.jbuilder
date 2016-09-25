@@ -1,1 +1,0 @@
-json.partial! "weatherrs/weatherr", weatherr: @weatherr

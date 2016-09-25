@@ -1,1 +1,0 @@
-json.array! @weatherrs, partial: 'weatherrs/weatherr', as: :weatherr
