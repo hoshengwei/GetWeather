@@ -35,5 +35,5 @@ def update_weather_monthly_report ( yy , mm, dd )
   id = (yy + mm + dd ).to_i
 
   #寫入資料庫
-  Weatherr.create( id: id ,year: yy, month: mm, day: dd, temp: @temp, humd: @humd, pres: @pres,  t_min: @t_min, t_max: @t_max, wdsd: @wdsd, wd_max: @wd_max, visb: @visb,  sun_rate: @sun_rate, sun_hour: @sun_hour, rain_hour: @rain_hour, rain: @rain, status: @status, weather: @weather)
+  Weatherr.create( id: id ,year: yy, month: mm, day: dd, temp: @temp, humd: @humd, pres: @pres,  t_min: @t_min, t_max: @t_max, wdsd: @wdsd, wd_max: @wd_max, visb: @visb,  sun_rate: @sun_rate, sun_hour: @sun_hour, rain_hour: @rain_hour, rain: @rain, status: @status)
 end

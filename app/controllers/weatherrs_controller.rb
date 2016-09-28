@@ -4,9 +4,9 @@ class WeatherrsController < ApplicationController
   # GET /weatherrs
   # GET /weatherrs.json
   def index
-    @weatherrs = Weatherr.all
+    @weatherrs = Weatherr.last(30).reverse
   end
   def update
-    
+
   end
 end
