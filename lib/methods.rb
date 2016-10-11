@@ -19,6 +19,7 @@ def update_weather_monthly_report ( yy , mm, dd )
 
   url ="http://e-service.cwb.gov.tw/HistoryDataQuery/MonthDataController.do?command=viewMain&station=467300&stname=%25E6%259D%25B1%25E5%2590%2589%25E5%25B3%25B6&datepicker=#{date}"
   doc = agent.get(url).search("//tr[#{i}]/td")
+  puts url
   @temp = doc[7].text
   @t_max = doc[8].text
   @t_min = doc[10].text
