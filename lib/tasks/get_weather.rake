@@ -7,4 +7,23 @@ namespace :get_weather do
 
   end
 
+  task :update => :environment do
+    require "methods"
+    get_time(24)
+    update_weather_monthly_report(@year, @month, @day)
+
+  end
+  task :update1 => :environment do
+    require "methods"
+    get_time(48)
+    update_weather_monthly_report(@year, @month, @day)
+
+  end
+  task :update2 => :environment do
+    require "methods"
+    get_time(72)
+    update_weather_monthly_report(@year, @month, @day)
+
+  end
+
 end
